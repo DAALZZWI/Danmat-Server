@@ -8,10 +8,16 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class WordController {
 
+    private lateinit var service: WordService
+
+    init {
+        service = WordService()
+    }
+
     @GetMapping("get/word")
     fun getWord(): Word {
 
-        return Word()
+        return service.getWord()
     }
 
     @PostMapping("post/word")
