@@ -10,7 +10,7 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.OneToMany
 
 data class Word(
-    var date: String = "",
-    var saved: Boolean = false,
-    var language: List<Language> = emptyList<Language>()
+    val date: String = "",
+    val saved: Boolean = false,
+    val language: List<Language> = emptyList<Language>()
 )

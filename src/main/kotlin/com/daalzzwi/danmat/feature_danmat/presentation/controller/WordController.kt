@@ -2,30 +2,37 @@ package com.daalzzwi.danmat.feature_danmat.presentation.controller
 
 import com.daalzzwi.danmat.feature_danmat.domain.model.Language
 import com.daalzzwi.danmat.feature_danmat.domain.model.Word
-import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @RestController
-class WordController {
+class WordController(
+    private val wordService: WordService
+) {
 
-    private var list: List<Word> = mutableListOf()
+    private var wordList: List<Word> = mutableListOf()
+    private var word: Word = Word()
 
     @GetMapping("get/word")
-    fun getWord(): List<Word> {
+    @ResponseBody
+    fun getOneWord(): Word {
 
-        list = makeData()
-        val date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+//        wordList = makeData()
+//        val date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+//
+//        word = wordList.last { it.date == date }
+////        return list.filter { it.date == date } as Word
+//        return word
 
-        return list.filter { date == it.date }
+        return wordService.getWord()
     }
 
     @PostMapping("post/word")
-    fun postWord() {
+    fun postOneWord() {
 
 
 
