@@ -14,9 +14,6 @@ class WordController(
     private val wordService: WordService
 ) {
 
-    private var wordList: List<Word> = mutableListOf()
-    private var word: Word = Word()
-
     @GetMapping("get/word")
     @ResponseBody
     fun getOneWord(): Word {
@@ -31,64 +28,64 @@ class WordController(
         return wordService.getWord()
     }
 
-    @PostMapping("post/word")
-    fun postOneWord() {
+//    @PostMapping("post/word")
+//    fun postOneWord() {
+//
+//
+//
+//    }
 
-
-
-    }
-
-    fun makeData(): List<Word> {
-
-        var result = mutableListOf<Word>()
-
-        for (i in 1..28) {
-
-            val word =
-                Word(
-                    date = "2023-02-${if (i < 10) "0${i}" else i}",
-                    saved = false,
-                    language = mutableListOf(
-                        Language(
-                            nation = "kr",
-                            word = "가치 ${i}",
-                            notationNative = "ga chi",
-                            sound = ""
-                        ),
-                        Language(
-                            nation = "cn",
-                            word = "价值",
-                            notationNative = "jià zhí",
-                            sound = ""
-                        ),
-                        Language(
-                            nation = "jp",
-                            word = "価値",
-                            notationNative = "ka chi",
-                            sound = ""
-                        ),
-                        Language(
-                            nation = "us",
-                            word = "value",
-                            notationNative = "value",
-                            sound = ""
-                        ),
-                        Language(
-                            nation = "pt",
-                            word = "valor",
-                            notationNative = "valor",
-                            sound = ""
-                        ),
-                        Language(
-                            nation = "fr",
-                            word = "valeur",
-                            notationNative = "valeur",
-                            sound = ""
-                        ),
-                    )
-                )
-            result.add(word)
-        }
-        return result
-    }
+//    fun makeData(): List<Word> {
+//
+//        var result = mutableListOf<Word>()
+//
+//        for (i in 1..28) {
+//
+//            val word =
+//                Word(
+//                    date = "2023-02-${if (i < 10) "0${i}" else i}",
+//                    saved = false,
+//                    language = mutableListOf(
+//                        Language(
+//                            nation = "kr",
+//                            word = "가치 ${i}",
+//                            notationNative = "ga chi",
+//                            sound = ""
+//                        ),
+//                        Language(
+//                            nation = "cn",
+//                            word = "价值",
+//                            notationNative = "jià zhí",
+//                            sound = ""
+//                        ),
+//                        Language(
+//                            nation = "jp",
+//                            word = "価値",
+//                            notationNative = "ka chi",
+//                            sound = ""
+//                        ),
+//                        Language(
+//                            nation = "us",
+//                            word = "value",
+//                            notationNative = "value",
+//                            sound = ""
+//                        ),
+//                        Language(
+//                            nation = "pt",
+//                            word = "valor",
+//                            notationNative = "valor",
+//                            sound = ""
+//                        ),
+//                        Language(
+//                            nation = "fr",
+//                            word = "valeur",
+//                            notationNative = "valeur",
+//                            sound = ""
+//                        ),
+//                    )
+//                )
+//            result.add(word)
+//        }
+//        return result
+//    }
 }
