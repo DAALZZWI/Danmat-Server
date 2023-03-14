@@ -5,9 +5,22 @@ import com.daalzzwi.danmat.feature_danmat.domain.model.Word
 import com.daalzzwi.danmat.feature_danmat.presentation.controller.WordRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Component
 
-@Component
+@Configuration
+class Configration(
+        @Autowired private val repository: WordRepository
+) {
+
+    @Bean
+    fun databaseInitializer() {
+
+
+    }
+}
+
 class DatabaseInitializer(
     @Autowired private val repository: WordRepository
 ) : CommandLineRunner {
@@ -16,7 +29,7 @@ class DatabaseInitializer(
 
         val words = makeData()
 
-//        repository.saveAll(words)
+        repository.saveAll(words)
     }
 }
 
@@ -30,7 +43,7 @@ fun makeData(): List<Word> {
             Word(
                 date = "2023-03-${if(i < 10) "0${i}" else i}" ,
                 saved = false,
-                language = listOf(
+                language = mutableListOf(
                     Language(
                         nation = "kr",
                         word = "가치 ${i}",

@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter
 class WordService(
     private val wordRepository: WordRepository
 ) {
-    fun getWord(): Word {
+    fun getWord(): List<Word> {
 
         val date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 

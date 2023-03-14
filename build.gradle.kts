@@ -41,6 +41,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-jdbc:0.12.213")
 	implementation("com.h2database:h2")
 	implementation("org.jboss.logging:jboss-logging:3.4.1.Final")
+	implementation("org.hibernate.validator:hibernate-validator:6.2.0.Final")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

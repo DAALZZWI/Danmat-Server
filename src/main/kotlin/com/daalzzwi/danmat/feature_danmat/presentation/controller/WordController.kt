@@ -16,7 +16,7 @@ class WordController(
 
     @GetMapping("get/word")
     @ResponseBody
-    fun getOneWord(): Word {
+    fun getOneWord(): List<Word> {
 
 //        wordList = makeData()
 //        val date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))

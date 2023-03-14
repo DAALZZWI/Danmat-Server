@@ -13,10 +13,9 @@ import org.springframework.stereotype.Repository
 //import org.springframework.data.jpa.repository.JpaRepository
 //import org.springframework.stereotype.Repository
 //
-@Repository
-interface WordRepository : CrudRepository<Word, Long> {
+interface WordRepository : JpaRepository<Word, Long> {
 
-    fun findByDate(date: String): Word
+    fun findByDate(date: String): List<Word>
 }
 //    save(S) : 새로운 엔티티는 저장하고 이미 있는 엔티티는 병합한다.
 //    → 엔티티에 식별자 값이 없으면(null이면) em.persist()를 호출, 식별자 값이 있으면 이미 있는 엔티티라 판단하여 em.merge() 호출
